@@ -9,10 +9,10 @@
         <div class="col-9 pt-5 ps-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{$user -> username}}</h1>
-                <a href="#">Add New Posts</a>
+                <a href="/p/create">Add New Posts</a>
             </div>
             <div class="d-flex">
-                <div><strong>441</strong> posts</div>
+                <div><strong>{{$user->posts->count()}}</strong> posts</div>
                 <div class="ps-4"><strong>90.2k</strong> followers</div>
                 <div class="ps-4"><strong>340</strong> following</div>
             </div>
@@ -22,15 +22,13 @@
         </div>
     </div>
     <div class="row pt-5">
+        @foreach($user->posts as $post)
         <div class="col-4">
-            <img src="/post_image/1.jpg" alt="" class="w-100">
+            <a href="/p/{{$post->id}}">
+                <img src="/storage/{{$post->image}}" alt="">
+            </a>
         </div>
-        <div class="col-4">
-            <img src="/post_image/2.jpg" alt="" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="/post_image/3.jpg" alt="" class="w-100">
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection
