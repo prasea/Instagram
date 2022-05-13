@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('profile_user', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('profile_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
