@@ -24,9 +24,7 @@
           <label for="image" class="col-md-4 col-form-label">Post Image</label>
           <input type="file" name="image" id="image">
           @error('image')
-
           <strong>{{ $message }}</strong>
-
           @enderror
         </div>
 
