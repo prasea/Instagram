@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\PostsController::class, 'index']);
 
 Route::post('/follow/{user}', [App\Http\Controllers\FollowsController::class, 'store']);
 
