@@ -29,7 +29,7 @@ class ProfilesController extends Controller
         if (request('image')) {
             $imagePath = request('image')->store('profile', 'public');
             //$imagePath = profile/randomString.jpg            
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(200, 200);
             $image->save();
         }
 
